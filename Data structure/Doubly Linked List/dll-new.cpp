@@ -1,5 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
+
+// Node class for doubly linked list
 class Node{
 public: 
 	int val;
@@ -12,6 +14,7 @@ public:
 	}
 };
 
+// Print linked list forword
 void print_forword(Node* head){
 	Node* temp = head;
 	while(temp != NULL){
@@ -21,6 +24,7 @@ void print_forword(Node* head){
 	cout<<"\n";
 }
 
+// Print linked list backword
 void print_backword(Node* tail){
 	Node* temp = tail;
 	while(temp != NULL){
@@ -30,6 +34,7 @@ void print_backword(Node* tail){
 	cout<<"\n";
 }
 
+// Insert at head
 void insert_at_head(Node* &head, Node* &tail, int val){
 	Node* newNode = new Node(val);
 	if(head == NULL){
@@ -41,6 +46,7 @@ void insert_at_head(Node* &head, Node* &tail, int val){
 	head = newNode;
 }
 
+// Insert at tail
 void insert_at_tail(Node* &head, Node* &tail, int val){
 	Node* newNode = new Node(val);
 	if(head == NULL){
@@ -53,6 +59,7 @@ void insert_at_tail(Node* &head, Node* &tail, int val){
 	tail = newNode;
 }
 
+// Insert at any position
 void insert_at_any_pos(Node* &head, int idx, int val){
 	Node* newNode = new Node(val);
 	Node* temp = head;
@@ -63,6 +70,18 @@ void insert_at_any_pos(Node* &head, int idx, int val){
 	temp->next->prev = newNode;
 	temp->next = newNode;
 	newNode->prev = temp;
+}
+
+// Delete From head
+void delete_at_head(Node* &head, Node* tail){
+	Node* deleteNode = head;
+	head = head->next;
+	delete deleteNode;
+	if(head == NULL){
+		tail = NULL;
+		return;
+	}
+	head->prev = NULL;
 }
 
 int main(){
@@ -78,12 +97,12 @@ int main(){
 
 	tail->prev = a;
 
-	insert_at_any_pos(head, 2, 100);
+	delete_at_head(head, tail);
+	delete_at_head(head, tail);
+	delete_at_head(head, tail);
+
 	
-
-
 	print_forword(head);
 	
-
 	return 0;
 }
