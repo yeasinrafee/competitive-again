@@ -14,6 +14,7 @@ public:
 	}
 };
 
+
 // Print linked list forword
 void print_forword(Node* head){
 	Node* temp = head;
@@ -108,20 +109,24 @@ void delete_at_any_pos(Node* head, int idx){
 	delete deleteNode;
 }
 
+// Input Doubly Linked List
+void input_DLinkedList(Node* &head, Node* &tail){
+	int val;
+	while(true){
+		cin>>val;
+		if(val == -1){
+			break;
+		}
+		insert_at_tail(head, tail, val);
+	}
+}
+
 int main(){
 	
-	Node* head = new Node(10);
-	Node* a = new Node(20);
-	Node* tail = new Node(30);
+	Node* head = NULL;
+	Node* tail = NULL;
 
-	head->next = a;
-
-	a->prev = head;
-	a->next = tail;
-
-	tail->prev = a;
-
-	delete_at_any_pos(head, 1);
+	input_DLinkedList(head, tail);
 
 	print_forword(head);
 	
