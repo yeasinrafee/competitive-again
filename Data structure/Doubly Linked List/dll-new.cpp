@@ -84,6 +84,18 @@ void delete_at_head(Node* &head, Node* tail){
 	head->prev = NULL;
 }
 
+// Delete From tail
+void delete_at_tail(Node* &head, Node* &tail){
+	Node* deleteNode = tail;
+	tail = tail->prev;
+	delete deleteNode;
+	if(tail == NULL){
+		head = NULL;
+		return;
+	}
+	tail->next = NULL;
+}
+
 int main(){
 	
 	Node* head = new Node(10);
@@ -97,11 +109,8 @@ int main(){
 
 	tail->prev = a;
 
-	delete_at_head(head, tail);
-	delete_at_head(head, tail);
-	delete_at_head(head, tail);
+	delete_at_tail(head, tail);
 
-	
 	print_forword(head);
 	
 	return 0;
