@@ -30,6 +30,13 @@ void print_backword(Node* tail){
 	cout<<"\n";
 }
 
+void insert_at_head(Node* &head, int val){
+	Node* newNode = new Node(val);
+	newNode->next = head;
+	head->prev = newNode;
+	head = newNode;
+}
+
 int main(){
 	
 	Node* head = new Node(10);
@@ -43,8 +50,9 @@ int main(){
 
 	tail->prev = a;
 
+	insert_at_head(head, 100);
+
 	print_forword(head);
-	print_backword(tail);
 	
 
 	return 0;
