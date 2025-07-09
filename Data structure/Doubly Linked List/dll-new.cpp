@@ -14,7 +14,6 @@ public:
 	}
 };
 
-
 // Print linked list forword
 void print_forword(Node* head){
 	Node* temp = head;
