@@ -9,7 +9,7 @@ int main(){
 	// list<int> l(5, 9);		// with size, and all value will be 9
 
 	// Insterting a list to another list or copy a list
-	list<int> l = {1, 2, 3, 4, 5};
+	list<int> l = {1, 2, 3, 1, 5, 3, 2, 4, 5};
 	// list<int> l2(l);
 
 	// Inserting an array to a list or copy an array to a list
@@ -19,6 +19,7 @@ int main(){
 	// Inserting a vectort to a list or copy a vector to a list
 	// vector<int> v = {1, 2, 3, 4, 5};
 	// list<int> l(v.begin(), v.end());
+
 
 	// 2. Capacity of List
 	// cout<<l.size()<<endl;		// Return the size of the list
@@ -32,28 +33,32 @@ int main(){
 	// list<int> l2;
 	// l2 = l;
 	// l2.assign(l.begin(), l.end());
-
 	// l.push_back(6);
 	// l.push_front(100);
 	// l.pop_back();
 	// l.pop_front();
-
 	// cout<<*next(l.begin(), 2)<<endl;		// Access list element with index number
 	// l.insert(next(l.begin(), 2), 100);		// Insert at any position
 	// list<int> l2 = {100, 200};
 	// l.insert(next(l.begin(), 3), l2.begin(), l2.end());		// Insert a list into a list at any position
-
 	// l.erase(next(l.begin(), 2));		// It will erase a value from any position
 	// l.erase(next(l.begin(), 1), next(l.begin(), 3));		// It will erase multiple values
-
 	// replace(l.begin(), l.end(), 3, 100);		// It will replace the value of list
-
 	// auto it = find(l.begin(), l.end(), 2);	// Search the specific value in a list
 	// if(it == l.end()){
 	// 	cout<<"Not found"<<endl;
 	// }else{
 	// 	cout<<"Found"<<endl;
 	// }
+
+
+	// 4. Operation in Doubly Linked List
+	// l.remove(2);		// It will remove all the given values
+	// l.sort();		// It will sort the list in ascending order
+	// l.sort(greater<int>());		// It will sort the list in descending order
+	// l.unique();		// It will remove the duplicate values and return the unique values (works on the sorted list)
+	// l.reverse();	// It will reverse the list
+
 
 
 	// Printing List
