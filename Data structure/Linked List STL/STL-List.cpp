@@ -61,18 +61,21 @@ int main(){
 
 
 	// 5. Element Access in Doubly Linked List
-	cout<<l.front()<<endl;		// return the first value
-	cout<<l.back()<<endl;		// return the last value
-	cout<<*next(l.begin(), 2)<<endl;	// return the value of given position
+	// cout<<l.front()<<endl;		// return the first value
+	// cout<<l.back()<<endl;		// return the last value
+	// cout<<*next(l.begin(), 2)<<endl;	// return the value of given position
 
 
+	// 6. Iterators
+	// cout<<*l.begin()<<endl;		// Return the first pointer of the list
+	// cout<<*l.end()<<endl;		// Point to the last element
 
-	// Printing List
+
+	// 7. Printing List
 	// With iterator
 	// for(auto it = l.begin(); it != l.end(); it++){
 	// 	cout<<*it<<endl;
 	// }
-
 	// Without iterator
 	for(int val: l){
 		cout<<val<<endl;
