@@ -60,6 +60,12 @@ int main(){
 	// l.reverse();	// It will reverse the list
 
 
+	// 5. Element Access in Doubly Linked List
+	cout<<l.front()<<endl;		// return the first value
+	cout<<l.back()<<endl;		// return the last value
+	cout<<*next(l.begin(), 2)<<endl;	// return the value of given position
+
+
 
 	// Printing List
 	// With iterator
