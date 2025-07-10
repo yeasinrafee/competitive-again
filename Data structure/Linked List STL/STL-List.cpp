@@ -24,10 +24,22 @@ int main(){
 	// cout<<l.size()<<endl;		// Return the size of the list
 	// cout<<l.max_size()<<endl;	// Return the maximum size of the list
 	// l.clear();		// Clear the list
-	// bool isEmpty = l.empty();		// Return a boolean of linked list if it is empty or not
-	// cout<<isEmpty<<endl;
+	// cout<<l.empty()<<endl;		// Return a boolean of linked list if it is empty or not
 	// l.resize(10);		// Resize the list and initialize with 0, if we put soceond parameter then put the value to the list
-	
+
+
+	// 3. Modifiers Function of List
+	// list<int> l2;
+	// l2 = l;
+	// l2.assign(l.begin(), l.end());
+
+	// l.push_back(6);
+	// l.push_front(100);
+	// l.pop_back();
+	// l.pop_front();
+
+	// cout<<*next(l.begin(), 2)<<endl;		// Access list element with index number
+	l.insert(next(l.begin(), 2), 100);
 
 
 	// Printing List
