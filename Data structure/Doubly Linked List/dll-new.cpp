@@ -120,6 +120,13 @@ void input_DLinkedList(Node* &head, Node* &tail){
 	}
 }
 
+// Reverse Doubly Linked List
+void reverse_DoublyLinkedList(Node* head, Node* tail){
+	for(Node *i = head, *j = tail; i != j && i->prev != j ; i = i->next, j = j->next){
+		swap(i->val, j->val);
+	}
+}
+
 int main(){
 	
 	Node* head = NULL;
