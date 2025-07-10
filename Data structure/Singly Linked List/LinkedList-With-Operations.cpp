@@ -161,6 +161,25 @@ void reverse_linkedList(Node* &head, Node* &tail, Node* temp){
 	tail = temp;
 }
 
+// Detect Cycle of Linked List
+void detect_cycle(Node* slow, Node* fast){
+	bool flag = false;
+	while(fast != NULL && fast->next != NULL){
+		slow = slow->next;
+		fast = fast->next->next;
+		if(slow == fast){
+			flag = true;
+			break;
+		}
+	}
+
+	if(flag){
+		cout<<"Cycle Detected!"<<endl;
+	}else{
+		cout<<"No Cycle."<<endl;
+	}
+}
+
 
 // Main Function
 int main(){
@@ -169,6 +188,7 @@ int main(){
 
 	input_linkedList(head, tail);
 	reverse_linkedList(head, tail, head);
+	detect_cycle(head, head);
 	print_linkedList(head);
 	
 	return 0;
