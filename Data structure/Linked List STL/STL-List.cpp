@@ -39,7 +39,21 @@ int main(){
 	// l.pop_front();
 
 	// cout<<*next(l.begin(), 2)<<endl;		// Access list element with index number
-	l.insert(next(l.begin(), 2), 100);
+	// l.insert(next(l.begin(), 2), 100);		// Insert at any position
+	// list<int> l2 = {100, 200};
+	// l.insert(next(l.begin(), 3), l2.begin(), l2.end());		// Insert a list into a list at any position
+
+	// l.erase(next(l.begin(), 2));		// It will erase a value from any position
+	// l.erase(next(l.begin(), 1), next(l.begin(), 3));		// It will erase multiple values
+
+	// replace(l.begin(), l.end(), 3, 100);		// It will replace the value of list
+
+	// auto it = find(l.begin(), l.end(), 2);	// Search the specific value in a list
+	// if(it == l.end()){
+	// 	cout<<"Not found"<<endl;
+	// }else{
+	// 	cout<<"Found"<<endl;
+	// }
 
 
 	// Printing List
