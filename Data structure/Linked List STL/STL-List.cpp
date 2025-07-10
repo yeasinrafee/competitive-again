@@ -8,15 +8,13 @@ int main(){
 	// list<int> l(5);		// with size, and all will be garbage values;
 	// list<int> l(5, 9);		// with size, and all value will be 9
 
-	// Insterting a list to another list or copy a list
+	// Insterting a list to another list or copy a list:
 	list<int> l = {1, 2, 3, 1, 5, 3, 2, 4, 5};
 	// list<int> l2(l);
-
-	// Inserting an array to a list or copy an array to a list
+	// Inserting an array to a list or copy an array to a list:
 	// int arr[] = {1, 2, 3, 4, 5};
 	// list<int> l(arr, arr+5);
-
-	// Inserting a vectort to a list or copy a vector to a list
+	// Inserting a vectort to a list or copy a vector to a list:
 	// vector<int> v = {1, 2, 3, 4, 5};
 	// list<int> l(v.begin(), v.end());
 

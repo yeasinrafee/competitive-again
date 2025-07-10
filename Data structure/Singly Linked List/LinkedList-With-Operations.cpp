@@ -149,13 +149,25 @@ void sort_linkedList(Node* head){
 	}
 }
 
+// Reverse the singly Linked List
+void reverse_linkedList(Node* &head, Node* temp){
+	if(temp->next == NULL){
+		head = temp;
+		return;
+	}
+	reverse_linkedList(head, temp->next);
+	temp->next->next = temp;
+	temp->next = NULL;
+}
+
+
 // Main Function
 int main(){
 	Node* head = NULL;
 	Node* tail = NULL;
 
 	input_linkedList(head, tail);
-	sort_linkedList(head);
+	reverse_linkedList(head, head);
 	print_linkedList(head);
 	
 	return 0;
