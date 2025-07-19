@@ -17,6 +17,7 @@ public:
 // Print linked list forword
 void print_forword(Node* head){
 	Node* temp = head;
+	cout<<"L -> ";
 	while(temp != NULL){
 		cout<<temp->val<<" ";
 		temp = temp->next;
@@ -27,6 +28,7 @@ void print_forword(Node* head){
 // Print linked list backword
 void print_backword(Node* tail){
 	Node* temp = tail;
+	cout<<"R -> ";
 	while(temp != NULL){
 		cout<<temp->val<<" ";
 		temp = temp->prev;
@@ -40,6 +42,7 @@ void insert_at_head(Node* &head, Node* &tail, int val){
 	if(head == NULL){
 		head = newNode;
 		tail = newNode;
+		return;
 	}
 	newNode->next = head;
 	head->prev = newNode;
@@ -138,14 +141,36 @@ int size(Node* head){
 	return count;
 }
 
+
 int main(){
 	
 	Node* head = NULL;
 	Node* tail = NULL;
 
-	input_DLinkedList(head, tail);
+	int q;
+	cin>>q;
+	while(q--){
+		int x, v;
+		cin>>x>>v;
 
-	print_forword(head);
+		int sz = size(head);
+
+		if(x < 0 || x >sz){
+			cout<<"Invalid"<<endl;
+		}else if(x == 0){
+			insert_at_head(head, tail, v);
+			print_forword(head);
+			print_backword(tail);
+		}else if(x == sz){
+			insert_at_tail(head, tail, v);
+			print_forword(head);
+			print_backword(tail);
+		}else{
+			insert_at_any_pos(head, x, v);
+			print_forword(head);
+			print_backword(tail);
+		}
+	}
 	
 	return 0;
 }

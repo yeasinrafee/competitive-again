@@ -145,7 +145,37 @@ int main(){
 
 	input_DLinkedList(head, tail);
 
-	print_forword(head);
+	Node* revHead = NULL;
+	Node* revTail = NULL;
+	Node* reversedList = tail;
+	while(reversedList != NULL){
+		insert_at_tail(revHead, revTail, reversedList->val);
+		reversedList = reversedList->prev;
+	}
+
+	bool flag = true;
+
+	while(head != NULL && revHead != NULL){
+		if(head->val != revHead->val){
+			flag = false;
+			break;
+		}
+		head = head->next;
+		revHead = revHead->next;
+	}
+
+	if(head != NULL || revHead != NULL){
+		flag = false;
+	}
+
+	if(flag){
+		cout<<"YES"<<endl;
+	}else{
+		cout<<"NO"<<endl;
+	}
+
+
+
 	
 	return 0;
 }

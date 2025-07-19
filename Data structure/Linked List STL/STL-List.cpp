@@ -67,6 +67,8 @@ int main(){
 	// 6. Iterators
 	// cout<<*l.begin()<<endl;		// Return the first pointer of the list
 	// cout<<*l.end()<<endl;		// Point to the last element
+	// cout<<*l.rbegin()<<end;		// returns a reverse iterator to the last element.
+	// cout<<*l.rend()<<end;		// eturns a reverse iterator to the position before the first element.
 
 
 	// 7. Printing List
@@ -74,6 +76,10 @@ int main(){
 	// for(auto it = l.begin(); it != l.end(); it++){
 	// 	cout<<*it<<endl;
 	// }
+	// Reverse Print 
+	// for (auto it = l.rbegin(); it != l.rend(); ++it) {
+    //     cout << *it << " ";
+    // }
 	// Without iterator
 	for(int val: l){
 		cout<<val<<endl;
