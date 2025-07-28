@@ -123,6 +123,17 @@ int count_leaf_nodes(Node* root){
 	return l+r;
 }
 
+int max_height(Node* root){
+	if(root == NULL)
+		return 0;
+	if(root->left == NULL && root->right == NULL)
+		return 0;
+	int l = max_height(root->left);
+	int r = max_height(root->right);
+
+	return max(l, r) + 1;
+}
+
 
 int main(){
 	
@@ -130,6 +141,7 @@ int main(){
 	level_order(root);
 	cout<<endl;
 	cout<<count_nodes(root)<<endl;
+	cout<<max_height(root)<<endl;
 
 	return 0;
 }
