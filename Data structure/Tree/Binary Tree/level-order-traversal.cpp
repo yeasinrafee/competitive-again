@@ -13,31 +13,8 @@ public:
 	}
 };
 
-void preorder(Node* root){
-	if(root == NULL)
-		return;
-	cout<<root->val <<" ";
-	preorder(root->left);
-	preorder(root->right);
-}
-
-void inorder(Node* root){
-	if(root == NULL)
-		return;
-	inorder(root->left);
-	cout<<root->val <<" ";
-	inorder(root->right);
-}
-
-void postorder(Node* root){
-	if(root == NULL)
-		return;
-	postorder(root->left);
-	postorder(root->right);
-	cout<<root->val <<" ";
-}
-
 void level_order(Node* root){
+
 	if(!root){
 		cout<<"No Tree"<<endl;
 		return;
@@ -52,11 +29,13 @@ void level_order(Node* root){
 
 		cout<< f->val <<" ";
 
-		if(f->left)
+		if(f->left){
 			q.push(f->left);			
+		}
 
-		if(f->right)
-			q.push(f->right); 
+		if(f->right){
+			q.push(f->right);
+		}
 	}
 }
 
@@ -75,6 +54,8 @@ int main(){
 	a->left = c;
 	b->left = d;
 	b->right = e;
+
+	level_order(root);
 	
 
 	return 0;
