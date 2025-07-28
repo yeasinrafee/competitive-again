@@ -13,53 +13,6 @@ public:
 	}
 };
 
-void preorder(Node* root){
-	if(root == NULL)
-		return;
-	cout<<root->val <<" ";
-	preorder(root->left);
-	preorder(root->right);
-}
-
-void inorder(Node* root){
-	if(root == NULL)
-		return;
-	inorder(root->left);
-	cout<<root->val <<" ";
-	inorder(root->right);
-}
-
-void postorder(Node* root){
-	if(root == NULL)
-		return;
-	postorder(root->left);
-	postorder(root->right);
-	cout<<root->val <<" ";
-}
-
-void level_order(Node* root){
-	if(!root){
-		cout<<"No Tree"<<endl;
-		return;
-	}
-
-	queue<Node *> q;
-	q.push(root);
-
-	while(!q.empty()){
-		Node* f = q.front();
-		q.pop();
-
-		cout<< f->val <<" ";
-
-		if(f->left)
-			q.push(f->left);			
-
-		if(f->right)
-			q.push(f->right); 
-	}
-}
-
 Node *input_tree(){
 	int val;
 	cin>>val;
@@ -97,6 +50,32 @@ Node *input_tree(){
 	return root;
 }
 
+void level_order(Node* root){
+
+	if(!root){
+		cout<<"No Tree"<<endl;
+		return;
+	}
+
+	queue<Node *> q;
+	q.push(root);
+
+	while(!q.empty()){
+		Node* f = q.front();
+		q.pop();
+
+		cout<< f->val <<" ";
+
+		if(f->left){
+			q.push(f->left);			
+		}
+
+		if(f->right){
+			q.push(f->right);
+		}
+	}
+}
+
 int count_nodes(Node* root){
 	if(root == NULL){
 		return 0;
@@ -130,6 +109,7 @@ int main(){
 	level_order(root);
 	cout<<endl;
 	cout<<count_nodes(root)<<endl;
+	cout<<count_leaf_nodes(root)<<endl;
 
 	return 0;
 }
