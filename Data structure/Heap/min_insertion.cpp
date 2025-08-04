@@ -15,7 +15,7 @@ int main(){
 	int cur_idx = v.size() - 1;
 	while(cur_idx != 0){
 		int par_idx = (cur_idx - 1)/2;
-		if(v[par_idx] < v[cur_idx])
+		if(v[par_idx] > v[cur_idx])
 			swap(v[par_idx], v[cur_idx]);
 		else
 			break;
