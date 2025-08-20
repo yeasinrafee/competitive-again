@@ -27,7 +27,7 @@ int main(){
 		int a, b;
 		cin>>a>>b;
 		adj_mat[a][b] = 1;
-		adj_mat[b][a] = 1;
+		adj_mat[b][a] = 1;		// undirected
 	}
 
 	for(int i = 0; i < n; i++){
@@ -36,6 +36,6 @@ int main(){
 		}
 		cout<<endl;
 	}
-	
+
 	return 0;
 }
